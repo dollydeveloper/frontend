@@ -26,7 +26,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://backend-wdqe.vercel.app/users', formData);
+      const response = await axios.post('https://backend-wdqe.vercel.app/users', formData);
 
       if (response.status === 201) {
         setMessage('User registered successfully!');
@@ -43,7 +43,7 @@ function App() {
  
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('http://backend-wdqe.vercel.app/users');
+      const response = await axios.get('https://backend-wdqe.vercel.app/users');
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -53,7 +53,7 @@ function App() {
   
   const handleDeleteAddress = async (userId, addressId) => {
     try {
-      const response = await axios.delete(`http://backend-wdqe.vercel.app/users/${userId}/addresses/${addressId}`);
+      const response = await axios.delete(`https://backend-wdqe.vercel.app/users/${userId}/addresses/${addressId}`);
       if (response.status === 200) {
         setMessage('Address deleted successfully!');
         fetchUsers(); 
